@@ -1,0 +1,32 @@
+/* side bar style */
+@import url('./cms/custom.css');
+
+
+body {
+    display: flex;
+    direction: rtl;
+}
+
+.sidebar {
+    position: fixed;
+    flex: 1;
+    height: 100vh;
+    background-color: var(--blue);
+}
+
+.sidebar-title {
+    font-size: 1.4rem;
+    padding: 15px;
+    text-align: center;
+    color: var(--white);
+    border-bottom: 2px solid #6c48bb;
+}
+
+.sidebar-links {
+    margin-top: 20px;
+}
+
+.sidebar-links li {
+    position: relative;
+    padding: 15px;
+}
