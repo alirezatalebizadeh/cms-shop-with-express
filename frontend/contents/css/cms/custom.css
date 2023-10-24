@@ -6,9 +6,8 @@
     --white-50: #f0f0f0;
     --blue: #471AAA;
 }
-
-@font-face {
-    font-family: Lalezar;
+font-face {
+    font-ramily: Lalezar;
     src: url('');
 }
 
