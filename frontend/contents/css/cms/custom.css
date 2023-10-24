@@ -6,12 +6,12 @@
     --white-50: #f0f0f0;
     --blue: #471AAA;
 }
-font-face {
-    font-ramily: Lalezar;
+
+@font-face {
+    font-family: Lalezar;
     src: url('');
 }
 
 *, body, html {
-    background-color: var(--white-50);
     font-family: Lalezar;
 }
