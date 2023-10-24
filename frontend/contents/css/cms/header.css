@@ -20,7 +20,7 @@
     column-gap: 20px;
 }
 .admin_profile img{
-    width: 50px;
+    width: 130px;
     clip-path: circle();
 }
 .admin_profile div{
