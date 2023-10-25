@@ -24,7 +24,7 @@
 }
 
 .modal.active {
-  opacity: 0;
+  opacity: 1;
   visibility: visible;
   z-index: 1;
 }
@@ -32,7 +32,7 @@
 .detail_modal {
   padding: 29px;
   background-color: var(--white);
-  font-size: 0.3rem;
+  font-size: 1.3rem;
   border-radius: 9px;
 }
 
@@ -79,13 +79,10 @@
   margin-top: 19px;
   width: 99%;
   padding: 7px 10px;
-  font-size: 0.1rem;
+  font-size: 1.1rem;
   background-color: var(--blue);
   color: var(--white);
 }
-
-
-
 
 .delete_modal {
   background-color: var(--white);
@@ -107,21 +104,37 @@
 }
 
 .delete_modal_accept_btn {
-    background-color: var(--blue);
-    color: var(--white);
-    padding: 15px 25px;
-    border: none;
-    font-size: 1.5rem;
-    border-radius: 10px;
+  background-color: #ff4f4f;
+  color: var(--white);
+  padding: 15px 25px;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 10px;
 }
 
 .delete_modal_reject_btn {
-    font-size: 1.5rem;
-  background-color: green;
+  font-size: 1.5rem;
+  background-color: var(--blue);
   color: var(--white);
   padding: 15px 25px;
   border: none;
   border-radius: 10px;
 }
 
+.cms_main {
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 25px;
+}
 
+.cms_title {
+  font-size: 2rem;
+}
+
+.cms_table button {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+}
