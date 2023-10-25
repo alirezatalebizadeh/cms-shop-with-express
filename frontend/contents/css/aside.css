@@ -26,8 +26,8 @@ aside a {
 }
 
 aside a:hover {
-  color: #3f5efb;
-  background: #fff;
+  color: var(--blue);
+  background: var(--white);
   outline: none;
   position: relative;
   background-color: #fff;
@@ -43,7 +43,8 @@ aside a i {
   margin-left: 5px;
 }
 
-aside a:hover::after {
+
+/* aside a:hover::after {
   content: "";
   position: absolute;
   z-index: -15;
@@ -55,6 +56,8 @@ aside a:hover::after {
   border-bottom-right-radius: 18px;
   box-shadow: 0 20px 0 0 #ffffff;
 } 
+
+
  aside a:hover::before {
   content: "";
   position: absolute;
@@ -66,14 +69,21 @@ aside a:hover::after {
   width: 45px;
   border-top-right-radius: 18px;
   box-shadow: 0 -20px 0 0 #ffffff;
-}  
+}   */
+
 aside a:hover .svg-inline--fa {
   opacity: 0;
 }
 
+
 aside a.active{
   background-color: var(--white);
   color: var(--blue);
-  border-radius: 10px;
-  
+  border-radius: 10px; 
 }
+
+
+
+
+
+
