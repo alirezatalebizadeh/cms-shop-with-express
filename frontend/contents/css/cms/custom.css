@@ -23,3 +23,17 @@
 *, body, html {
     font-family: Lalezar;
 }
+button{
+    border: none;
+}
+
+/* .back_red{
+    background-color: rgba(255, 0, 0, 0.692);
+}
+
+.back_green{
+    background-color: green;
+}
+.back_yellow{
+    background-color: yellow;
+} */

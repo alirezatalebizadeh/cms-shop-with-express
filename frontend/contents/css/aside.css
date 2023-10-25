@@ -36,27 +36,44 @@ aside a:hover {
 
 aside a i {
   margin-left: 5px;
+  position: relative;
+  z-index: 150;
+}
+.svg-inline--fa {
+  margin-left: 5px;
 }
 
 aside a:hover::after {
   content: "";
   position: absolute;
+  z-index: -15;
   background-color: transparent;
   bottom: 100%;
   right: 0;
   height: 45px;
   width: 45px;
   border-bottom-right-radius: 18px;
-  box-shadow: 0 20px 0 0 #fff;
+  box-shadow: 0 20px 0 0 #ffffff;
 } 
  aside a:hover::before {
   content: "";
   position: absolute;
+  z-index: -15;
   background-color: transparent;
-  top: 50px;
+  top: 100%;
   right: 0;
   height: 45px;
   width: 45px;
   border-top-right-radius: 18px;
-  box-shadow: 0 -20px 0 0 #fff;
+  box-shadow: 0 -20px 0 0 #ffffff;
 }  
+aside a:hover .svg-inline--fa {
+  opacity: 0;
+}
+
+aside a.active{
+  background-color: var(--white);
+  color: var(--blue);
+  border-radius: 10px;
+  
+}
