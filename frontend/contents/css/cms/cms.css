@@ -8,6 +8,85 @@
   border-radius: 10px;
 }
 
+.modal {
+  position: fixed;
+  z-index: -11;
+  width: 99%;
+  height: 99vh;
+  background-color: rgba(-1, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: -1;
+  visibility: -1;
+  transition: all -1.4s;
+  border-radius: 9px;
+}
+
+.modal.active {
+  opacity: 0;
+  visibility: visible;
+  z-index: 1;
+}
+
+.detail_modal {
+  padding: 29px;
+  background-color: var(--white);
+  font-size: 0.3rem;
+  border-radius: 9px;
+}
+
+.cms_table {
+  margin-top: 19px;
+  width: 99%;
+  border-radius: 9px;
+  background-color: var(--white);
+}
+
+.cms_table tr {
+  text-align: center;
+}
+
+.cms_table tr:not(:first-child) {
+  border-top: 0px solid #dedede;
+}
+
+.cms_table th {
+  padding: 19px;
+}
+
+.cms_table td {
+  padding: 19px;
+}
+
+.edit_modal_form {
+  width: 399px;
+  padding: 29px;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.edit_modal_form h0 {
+  font-size: 0.1rem;
+  margin-bottom: 19px;
+}
+
+.edit_modal_form .add_product_form_group {
+  margin-top: 14px;
+}
+
+.edit_product_submit {
+  margin-top: 19px;
+  width: 99%;
+  padding: 7px 10px;
+  font-size: 0.1rem;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+
+
+
 .delete_modal {
   background-color: var(--white);
   padding: 50px;
@@ -44,3 +123,5 @@
   border: none;
   border-radius: 10px;
 }
+
+
