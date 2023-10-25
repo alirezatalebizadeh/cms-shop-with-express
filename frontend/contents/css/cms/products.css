@@ -1,4 +1,182 @@
-@import url('./custom.css');
-@import url('../aside.css');
-@import url('../cssReset.css');
-@import url('./header.css');
+@import url("./custom.css");
+@import url("../aside.css");
+@import url("../cssReset.css");
+@import url("./header.css");
+@import url("./cms.css");
+body {
+  background-color: var(--white-50);
+}
+
+.products_main {
+  margin-top: 60px;
+}
+
+.products_title {
+  font-size: 2rem;
+}
+
+.add_product_form {
+  margin-top: 30px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.add_product_form_wrap {
+  display: grid;
+  gap: 10px 20px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.add_product_form_group {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  /* padding: 10px 20px; */
+}
+
+.add_product_input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem;
+  padding: 12px 10px;
+}
+.add_product_submit {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+/* start table */
+
+.product_table {
+  margin-top: 20px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+
+.product_table_heading_tr {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 70px 0 468px;
+  margin-top: 20px;
+}
+
+.product_table_tr {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 10px 0 30px;
+}
+
+.product_table_img {
+  width: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product_table th {
+  padding: 20px;
+}
+
+.product_table td {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.products_table_button {
+  padding: 8px 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: 0;
+  transition: all 0.4s;
+  border-radius: 10px;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.detail_modal {
+  padding: 30px;
+  background-color: var(--white);
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+.cms_table {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
+.cms_table tr {
+  text-align: center;
+}
+
+.cms_table tr:not(:first-child) {
+  border-top: 1px solid #dedede;
+}
+
+.cms_table th {
+  padding: 20px;
+}
+
+.cms_table td {
+  padding: 20px;
+}
+
+.edit_modal_form {
+  width: 400px;
+  padding: 30px;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.edit_modal_form h1 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.edit_modal_form .add_product_form_group {
+  margin-top: 15px;
+}
+
+.edit_product_submit {
+  margin-top: 20px;
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1.1rem;
+  background-color: var(--blue);
+  color: var(--white);
+}
+

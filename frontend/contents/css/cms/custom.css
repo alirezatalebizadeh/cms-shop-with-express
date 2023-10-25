@@ -7,6 +7,14 @@
     --blue: #471AAA;
 }
 
+.main{
+    flex: 4;
+    padding: 20px;
+    padding-right: 315px;
+
+}
+
+
 @font-face {
     font-family: Lalezar;
     src: url('');

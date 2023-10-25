@@ -1,7 +1,7 @@
 .main{
     flex: 4;
     padding: 20px;
-    padding-right: 280px;
+    padding-right: 315px;
 
 }
 
@@ -20,7 +20,7 @@
     column-gap: 20px;
 }
 .admin_profile img{
-    width: 130px;
+    width: 100px;
     clip-path: circle();
 }
 .admin_profile div{
@@ -48,7 +48,7 @@
     background: var(--white);
     border-radius: 15px;
     width: 400px;
-    height: 45px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,6 +58,8 @@
 .search_box input{
     outline: none;
     border: none;
+    border-radius: 10px;
+    margin: 0 10px;
     background-color: unset;
     font-size: 1.1rem;
     width: 100%;
@@ -65,10 +67,11 @@
 }
 .search_box button{
     display: flex;
+    text-wrap: nowrap;
     font-size: 1.1rem;
     width: 135px;
     border-radius: 10px;
-    padding: 3px 10px;
+    padding: 7px 10px;
     background-color: var(--blue);
     color: var(--white);
 }
