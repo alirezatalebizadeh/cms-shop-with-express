@@ -21,7 +21,6 @@
   visibility: -1;
   transition: all -1.4s;
   border-radius: 9px;
-  border-radius: 10px;
 }
 
 .modal.active {
@@ -60,14 +59,65 @@
   padding: 19px;
 }
 
+
+/* edit form */
+.add_product_form {
+  margin-top: 30px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.add_product_form_wrap {
+  display: grid;
+  gap: 10px 20px;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.add_product_form_group {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  /* padding: 10px 20px; */
+}
+
+.add_product_input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1.1rem;
+  padding: 12px 10px;
+}
+.add_product_submit {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+.products_title {
+  font-size: 2rem;
+}
+
+/* edit form */
+
 .edit_modal_form {
   width: 399px;
   padding: 29px;
   background-color: var(--white);
   text-align: center;
+  border-radius: 10px;
 }
 
-.edit_modal_form h0 {
+.edit_modal_form h2 {
   font-size: 0.1rem;
   margin-bottom: 19px;
 }
@@ -83,6 +133,7 @@
   font-size: 1.1rem;
   background-color: var(--blue);
   color: var(--white);
+  border-radius: 10px;
 }
 
 .delete_modal {

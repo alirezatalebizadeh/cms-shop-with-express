@@ -1,6 +1,16 @@
-@import url(../aside.css);
-@import url(./custom.css);
-@import url(./header.css);
+@import url('../aside.css');
+@import url('./custom.css');
+@import url('./header.css');
+@import url('./cms.css');
 
 
+.edit_user_info_modal{
+    max-width: 400px;
+    background-color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
 
+.user_info_submit{
+    width: 100%;
+}
