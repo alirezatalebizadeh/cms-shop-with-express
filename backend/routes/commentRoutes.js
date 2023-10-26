@@ -19,7 +19,6 @@ commentsRouter.get("/", (req, res) => {
 });
 
 
-
 //! delete comment from db
 commentsRouter.delete('/:commentID',(req,res)=>{
     let commentID= req.params.commentID
@@ -36,7 +35,6 @@ commentsRouter.delete('/:commentID',(req,res)=>{
 })
 
 
-
 //! update comment
 commentsRouter.put('/:commentID',(req,res)=>{
     let commentID= req.params.commentID    
@@ -51,7 +49,6 @@ commentsRouter.put('/:commentID',(req,res)=>{
     }
   });
 })
-
 
 
 

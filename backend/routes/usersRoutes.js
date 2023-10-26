@@ -17,6 +17,7 @@ usersRouter.get("/", (req, res) => {
   });
 });
 
+
 //! delete user from db
 usersRouter.delete("/:userID", (req, res) => {
   let userID = req.params.userID;
@@ -31,6 +32,7 @@ usersRouter.delete("/:userID", (req, res) => {
     }
   });
 });
+
 
 //! update user from db
 usersRouter.put("/:userID", (req, res) => {

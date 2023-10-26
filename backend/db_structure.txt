@@ -52,7 +52,8 @@ we have to create some table in sql server with this structure
     sale,
     count,
     popularity,userID ()
-    saleCount
+    saleCount,
+    isActive [0 , 1]
 }
 
 5.offs{
