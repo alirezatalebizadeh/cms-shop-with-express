@@ -2,19 +2,62 @@
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>صفحه اصلی</title>
+    <title> سفارشات</title>
     <link rel="stylesheet" href="./libs/font awsome/all.min.css" />
     <link rel="stylesheet" href="./contents/css/cms/orders.css" />
     <!-- Option 1: Include in HTML -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   </head>
   <body>
+
+<!-- !  delete modal-->
+    <!-- add active class to show delete modal -->
+    <div class="modal">
+      <div class="delete_modal">
+        <h2>آیا از حذف محصول اطمینان دارید؟</h2>
+        <div class="delete_modal_btn">
+          <button class="delete_modal_accept_btn">بله</button>
+          <button class="delete_modal_reject_btn">خیر</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ! detail modal -->
+
+    <div class="modal">
+      <div class="order-detail_modal">
+        <table class="cms_table">
+          <tr>
+            <th>میزان فروش محصول</th>
+            <th>میزان رضایت </th>
+            <th>موجودی فروش </th>
+            <th>تعداد فروش</th>
+            <th></th>
+          </tr>
+
+          <tr>
+            <td>199,000,000</td>
+            <td>89/100</td>
+            <td>35</td>
+            <td>36</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+
+
+
+
     <!-- !start aside -->
     <aside>
       <h3>داشبورد ادمین</h3>
-      <a href="./orders.html" class="active">
+      <a href="./orders.html">
         <i class="fa fa-home" aria-hidden="true"></i>
-        صفحه اصلی
+         سفارشات
       </a>
       <a href="./products.html">
         <i class="fa fa-laptop" aria-hidden="true"></i>
@@ -62,6 +105,43 @@
             <i class="bi bi-brightness-high"></i>
           </button>
         </div>
+      </div>
+
+      <div class="cms_main">
+        <h2 class="cms_title">لیست سفارشات ثبت شده</h2>
+
+        <div class="cms_empty_error">هیچ سفارشی ثبت نشد</div>
+
+        <table class="cms_table">
+          <tr>
+            <th>نام محصول خریداری شده</th>
+            <th>نام خریدار</th>
+            <th>تاریخ سفارش</th>
+            <th>ساعت سفارش</th>
+            <th>مبلغ کل</th>
+            <td>تخفیف اعمال شده</td>
+            <td>مبلغ پایانی</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="#">لبتاب دل</هa>
+              </td>
+            <td>علیرضا طالبی زاده</td>
+            <td>۱۲ آبان ۱۴۰۲</td>
+            <td>12:52</td>
+            <td>10%</td>
+            <td>90,000</td>
+            <td>
+              <button>جزییات</button>
+              <button>حذف</button>
+              <button>بعدا بررسی می شود</button>
+              <button>تایید</button>
+            </td>
+          </tr>
+
+        </table>
+
       </div>
     </div>
 

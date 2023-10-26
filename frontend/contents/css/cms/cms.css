@@ -140,6 +140,7 @@
   background-color: var(--white);
   padding: 50px;
   text-align: center;
+  border-radius: 10px;
 }
 
 .delete_modal h2 {
@@ -180,7 +181,8 @@
 }
 
 .cms_title {
-  font-size: 2rem;
+  font-size: 1.7rem;
+
 }
 
 .cms_table button {

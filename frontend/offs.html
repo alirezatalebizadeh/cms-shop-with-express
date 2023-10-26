@@ -2,23 +2,38 @@
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>تخفیف ها</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./libs/font awsome/all.min.css" />
     <link rel="stylesheet" href="./contents/css/cms/offs.css" />
     <!-- Option 1: Include in HTML -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <title>تخفیف ها</title>
   </head>
   <body>
+
+    <!-- !  delete modal-->
+    <!-- add active class to show delete modal -->
+    <div class="modal">
+      <div class="delete_modal">
+        <h2>آیا از حذف محصول اطمینان دارید؟</h2>
+        <div class="delete_modal_btn">
+          <button class="delete_modal_accept_btn">بله</button>
+          <button class="delete_modal_reject_btn">خیر</button>
+        </div>
+      </div>
+    </div>
+
     <!-- !start aside -->
     <aside>
       <h3>داشبورد ادمین</h3>
       <a href="./orders.html">
         <i class="fa fa-home" aria-hidden="true"></i>
-        صفحه اصلی
+        سفارشات
       </a>
-      <a href="./products.html" class="active">
+      <a href="./products.html">
         <i class="fa fa-laptop" aria-hidden="true"></i>
         محصولات
       </a>
@@ -30,23 +45,19 @@
         <i class="fa fa-users" aria-hidden="true"></i>
         کاربران
       </a>
-      <a href="./offs.html">
+      <a href="./offs.html" class="active">
         <i class="fa fa-gift" aria-hidden="true"></i>
         تخفیف ها
       </a>
     </aside>
     <!-- ! end aside -->
 
-
     <!-- !start main -->
     <div class="main">
       <!-- header -->
       <div class="header">
         <div class="admin_profile">
-          <img
-            src="./contents/imgs/104105725.png"
-            alt="admin profile"
-          />
+          <img src="./contents/imgs/104105725.png" alt="admin profile" />
           <div class="">
             <h1>علیرضا طالبی زاده</h1>
             <h3>برنامه نویس فول استک mern</h3>
@@ -66,8 +77,34 @@
         </div>
       </div>
 
+      <!-- table -->
+      <div class="cms_table">
+        <h3 class="cms_title">لیست کدهای تخفیف ثبت شده</h3>
+        <div class="cms_empty_error">هیچ کد تخفیفی یافت نشد</div>
 
-      
+        <table class="cms_table">
+          <tr>
+            <th>کد تخفیف</th>
+            <th>درصد تخفیف</th>
+            <th>تاریخ ثبت</th>
+            <th>ثبت شده توسط</th>
+            <th>ساخته شده برای</th>
+          </tr>
+          <tr>
+            <td>radin@react</td>
+            <td>20%</td>
+            <td>۱۲ شهریور ۱۴۰۱</td>
+            <td>عباس رضایی</td>
+            <td>لبتاب mac</td>
+            <td>
+              <button>تایید</button>
+              <button>حذف</button>
+            </td>
+          </tr>
+
+        
+        </table>
+      </div>
     </div>
     <!-- ! end main -->
 

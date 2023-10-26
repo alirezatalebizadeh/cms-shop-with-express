@@ -2,3 +2,9 @@
 @import url('../aside.css');
 @import url('../cssReset.css');
 @import url('./header.css');
+@import url('./cms.css');
+
+body{
+    background-color: var(--white-50);
+    overflow: hidden;
+}
