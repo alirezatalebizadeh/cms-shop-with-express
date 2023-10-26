@@ -1,0 +1,69 @@
+this is structure of db in sql.
+we have to create some table in sql server with this structure
+
+
+1.Products {
+    id,
+    title,
+    price, 
+    count , 
+    img,
+    popularity , 
+    sale , 
+    colors
+}
+
+
+2.Comments{
+    id,
+    body,
+    date,
+    hour,
+    userID (foreignKey ==> id(Users)),
+    productID (foreignKey ===> id(Products))
+
+}
+
+
+
+3.Users{
+    id,
+    firstName,
+    lastName,
+    userName,
+    password,
+    phone,
+    email,
+    city,
+    addres,
+    score,
+    buy
+}
+
+
+4.Orders {
+    id,
+    userID (foreignKey ==> id(Users)),
+    productID (foreignKey ===> id(Products)),
+    date,
+    hour,
+    price,
+    off,
+    sale,
+    count,
+    popularity,userID ()
+    saleCount
+}
+
+5.offs{
+    id,
+    code,
+    percent,
+    userID (foreignKey ==> id(Users)),
+    productID (foreignKey ===> id(Products)),
+    date
+}
+
+
+
+
