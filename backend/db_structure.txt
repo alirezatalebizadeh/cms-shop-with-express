@@ -61,9 +61,18 @@ we have to create some table in sql server with this structure
     percent,
     userID (foreignKey ==> id(Users)),
     productID (foreignKey ===> id(Products)),
-    date
+    date,
+    isActive: [0 , 1]
 }
 
 
 
 
+6.Admins{
+    id,
+    firstName,
+    lastName,
+    userName,
+    password,
+    task
+}
