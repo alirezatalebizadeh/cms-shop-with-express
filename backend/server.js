@@ -4,6 +4,8 @@ const bodyParser=require('body-parser')
 const productsRouter = require('./routes/productRoutes')
 const commentsRouter=require('./routes/commentRoutes')
 const usersRouter = require('./routes/usersRoutes')
+const offsRouter = require('./routes/offsRoutes')
+const ordersRouter = require('./routes/orderRoutes')
 
 const app =express()
 
@@ -13,6 +15,8 @@ app.use(bodyParser.json())
 app.use('/api/products',productsRouter)
 app.use('/api/comments',commentsRouter)
 app.use('/api.users',usersRouter)
+app.use('/api/orders',ordersRouter)
+app.use('/api.offs',offsRouter)
 
 
 

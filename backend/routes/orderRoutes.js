@@ -10,7 +10,7 @@ ordersRouter.get("/", (req, res) => {
 
   shopDb.query(selectAllOrdersQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
       res.send(result);
     }
@@ -46,7 +46,7 @@ ordersRouter.put("/active-order/:orderID/:isActive", (req, res) => {
       res.send(result, "one order updated");
     }
   });
-  
+
 });
 
 module.exports = ordersRouter;
