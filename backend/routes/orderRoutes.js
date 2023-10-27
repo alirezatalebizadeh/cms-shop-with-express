@@ -6,7 +6,8 @@ const ordersRouter = express.Router();
 
 //! get all orders from db
 ordersRouter.get("/", (req, res) => {
-  let selectAllOrdersQuery = `SELECT * FROM Orders`;
+  //! refactor query to connect with products'table and users's table to get data
+  let selectAllOrdersQuery = `SELECT Orders.id , Orders.date,Orders.price,Orders.off,Orders.sale,Orders.popularity,Orders.count,Orders.saleCount,Orders.isActive , Users.firstName as userID , Products.title as productID from Orders INNER JOIN Users on Users.id = Orders.userID INNER JOIN Products on Products.id =Orders.productID`;
 
   shopDb.query(selectAllOrdersQuery, (err, result) => {
     if (err) {

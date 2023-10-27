@@ -7,7 +7,8 @@ const offsRouter = express.Router();
 
 //! get all orders from db
 offsRouter.get("/", (req, res) => {
-  let selectAllOffsQuery = `SELECT * FROM Offs`;
+  //! connect aome tables in db to get data 
+  let selectAllOffsQuery = `SELECT Offs.id,Offs.code,Offs.percent,Offs.date,Offs.isActive, Admins.firstName as adminID , Products.title as productID from Offs INNER JOIN Admins on Admins.id = Offs.adminID INNER JOIN Products on Products.id =Offs.productID`;
 
   shopDb.query(selectAllOffsQuery, (err, result) => {
     if (err) {
