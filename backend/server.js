@@ -14,9 +14,9 @@ app.use(bodyParser.json())
 
 app.use('/api/products',productsRouter)
 app.use('/api/comments',commentsRouter)
-app.use('/api.users',usersRouter)
+app.use('/api/users',usersRouter)
 app.use('/api/orders',ordersRouter)
-app.use('/api.offs',offsRouter)
+app.use('/api/offs',offsRouter)
 
 
 
