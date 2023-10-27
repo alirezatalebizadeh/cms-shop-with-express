@@ -4,8 +4,8 @@ const bodyParser=require('body-parser')
 const productsRouter = require('./routes/productRoutes')
 const commentsRouter=require('./routes/commentRoutes')
 const usersRouter = require('./routes/usersRoutes')
-const offsRouter = require('./routes/offsRoutes')
 const ordersRouter = require('./routes/orderRoutes')
+const offsRouter = require('./routes/offsRoutes')
 
 const app =express()
 
