@@ -76,23 +76,106 @@ main url ==> http://localhost:3000/api/
 ///////////////////////////////////////////////finish comments routes///////////////
 
 
-///////////////////////////////////////////////start comments routes///////////////
+///////////////////////////////////////////////start users routes///////////////
+
+1.Get all users{
+    api => http://localhost:3000/api/users/
+    method:GET
+    res ==> all users array
+}
 
 
+1.Delete user{
+    api => http://localhost:3000/api/users/:userID
+    method:DELETE
+    req param ==> userID
+}
 
 
+1.Update  user{
+    api => http://localhost:3000/api/comments/:commentID
+    method:PUT
+    req body {
+        firstName(string type),==>نام کاربر
+        lastName (string type),==> نام خانوادگی کاربر
+        userName (string type),==> نام کاربری کاربر
+        password (string type),==> رمز عبور کاربر
+        phone(string type),==> شماره تلفن کاربر
+        email (string type),==> ایمیل کاربر
+        city (string type),==> شهر کاربر
+        address (string type),==> آدرس کاربر
+        score,==> امتیاز کاربر
+        buy ==> مقدار خرید کاربر
+    }
+}
 
 
+///////////////////////////////////////////////finish users routes///////////////
+
+///////////////////////////////////////////////start orders routes///////////////
+
+1.Get all orders{
+    api => http://localhost:3000/api/orders/
+    method:GET
+    res ==> all orders array
+}
 
 
+1.Delete order{
+    api => http://localhost:3000/api/orders/:orderID
+    method:DELETE
+    req param ==> orderID
+}
 
 
+1.Update order{
+    api => http://localhost:3000/api/orders/active-order/:orderID/:isActive"
+    method:PUT
+    req param ==> orderID ==> order id
+    req.param ==> isActive (0 or 1)==> order isActive
+}
 
 
+///////////////////////////////////////////////finish orders routes///////////////
+
+///////////////////////////////////////////////start offs routes///////////////
+
+1.Get all offs{
+    api => http://localhost:3000/api/offs/
+    method:GET
+    res ==> all offs array
+}
 
 
-///////////////////////////////////////////////finish comments routes///////////////
+1.Delete off{
+    api => http://localhost:3000/api/offs/:offID
+    method:DELETE
+    req param ==> offID
+}
 
+
+1.Update off{
+    api => http://localhost:3000/api/offs/active-offs/:offID/:isActive"
+    method:PUT
+    req param ==> offID ==> offs id
+    req.param ==> isActive(1 or 0) ==> offs isActive
+}
+
+
+///////////////////////////////////////////////finish offs routes///////////////
+
+///////////////////////////////////////////////start admins routes///////////////
+1.Get  admin{
+    api => http://localhost:3000/api/admins/token
+    method:GET
+    req headers {
+        authorization;admin token
+    }
+    res => info admin
+}
+
+
+///////////////////////////////////////////////finish admins routes///////////////
 
 
 

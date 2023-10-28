@@ -1,0 +1,9 @@
+how to create project with express js?
+
+1. create frontend site 
+2. analize frontend to create table in db 
+3. create table in db as soon as sql 
+4. create restful api for project and all tables to create CRUD
+5. test api url with postman 
+6. create api documents for frintend developer 
+7. user api to CRUD 

@@ -34,7 +34,7 @@ ordersRouter.delete("/:orderID", (req, res) => {
 });
 
 //! update order from db
-ordersRouter.put("/active-off/:orderID/:isActive", (req, res) => {
+ordersRouter.put("/active-order/:orderID/:isActive", (req, res) => {
   let orderID = req.params.orderID;
   let isActive = req.params.isActive;
   console.log(req.params);

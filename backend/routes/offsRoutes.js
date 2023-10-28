@@ -27,9 +27,9 @@ offsRouter.delete("/:offID", (req, res) => {
 
   shopDb.query(deleteOffQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
-      res.send(result, "one off deleted");
+      res.send(result);
     }
   });
 });
@@ -43,9 +43,9 @@ offsRouter.put("/active-offs/:offID/:isActive", (req, res) => {
 
   shopDb.query(updateOffQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
-      res.send(result, "one order updated");
+      res.send(result);
     }
   });
 });
