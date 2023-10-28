@@ -8,8 +8,8 @@ const adminsRoutes = express.Router();
 //! get mainAdmin with token from db
 adminsRoutes.get("/", (req, res) => {
   let adminToken = req.headers.authorization;
-
-  let selectMainAdminQuery = `SELECT * FROM Admins WHERE token = ${adminToken}`;
+console.log(adminToken);
+  let selectMainAdminQuery = `SELECT * FROM Admins WHERE token = '${adminToken}'`;
 
   shopDb.query(selectMainAdminQuery, (err, result) => {
     if (err) {

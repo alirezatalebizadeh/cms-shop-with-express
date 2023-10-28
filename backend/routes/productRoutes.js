@@ -64,4 +64,4 @@ productsRouter.post("/", (req, res) => {
   });
 });
 
-module.exports = productsRouter
+module.exports = productsRouter;

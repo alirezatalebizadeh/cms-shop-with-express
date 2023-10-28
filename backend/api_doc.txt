@@ -1,0 +1,102 @@
+how can you user restful api ?
+
+
+main url ==> http://localhost:3000/api/
+
+
+
+////////////////////////////////////////start product routes ///////////
+1.Get all products{
+    api => http://localhost:3000/api/products/
+    method:GET
+    res ==> all products array
+}
+
+1.Delete product{
+    api => http://localhost:3000/api/products/:productID
+    method:DELETE
+    req param ==> productID
+}
+
+1.Update  product{
+    api => http://localhost:3000/api/products/:productID
+    method:PUT
+    req body {
+        title(string type),==>عنوان محصول
+        price,==> قیمت محصول
+        count,==< موجودی محصول
+        src(string type),==> آدرس کاور محصول
+        popularity,==> محبوبیت محصول
+        sale,==> میزان فروش
+        colors==> تعداد رنگ بندی
+    }
+}
+
+1.Create products{
+    api => http://localhost:3000/api/products/
+    method:POST
+    req body {
+        title(string type),==>عنوان محصول
+        price,==> قیمت محصول
+        count,==< موجودی محصول
+        src(string type),==> آدرس کاور محصول
+        popularity,==> محبوبیت محصول
+        sale,==> میزان فروش
+        colors==> تعداد رنگ بندی
+    }
+}
+
+
+///////////////////////////////////////////////finish product routes///////////////
+
+1.Get all comments{
+    api => http://localhost:3000/api/comments/
+    method:GET
+    res ==> all comments array
+}
+
+1.Delete comment{
+    api => http://localhost:3000/api/comments/:commentID
+    method:DELETE
+    req param ==> commentID
+}
+
+1.Update  product{
+    api => http://localhost:3000/api/comments/:commentID
+    method:PUT
+    req body {
+        body:'' ==> محتوای جدید کامنت 
+    }
+}
+
+
+
+
+
+///////////////////////////////////////////////finish comments routes///////////////
+
+
+///////////////////////////////////////////////start comments routes///////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////finish comments routes///////////////
+
+
+
+
+
+
+
+
