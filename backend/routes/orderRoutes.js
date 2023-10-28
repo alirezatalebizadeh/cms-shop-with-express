@@ -26,28 +26,28 @@ ordersRouter.delete("/:orderID", (req, res) => {
 
   shopDb.query(deleteOrderQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
-      res.send(result, "one order deleted");
+      res.send(result);
     }
   });
 });
 
 //! update order from db
-ordersRouter.put("/active-order/:orderID/:isActive", (req, res) => {
+ordersRouter.put("/active-off/:orderID/:isActive", (req, res) => {
   let orderID = req.params.orderID;
   let isActive = req.params.isActive;
+  console.log(req.params);
 
-  let updateOrderQuery = `UPDATE Orders SET isActive='${isActive} WHERE id=${orderID}`;
+  let updateOrderQuery = `UPDATE Orders SET isActive=${isActive} WHERE id=${orderID}`;
 
   shopDb.query(updateOrderQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
-      res.send(result, "one order updated");
+      res.send(result);
     }
   });
-
 });
 
 module.exports = ordersRouter;

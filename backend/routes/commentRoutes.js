@@ -18,10 +18,10 @@ commentsRouter.get("/", (req, res) => {
   });
 });
 
+
 //! delete comment from db
 commentsRouter.delete("/:commentID", (req, res) => {
   let commentID = req.params.commentID;
-  console.log(commentID);
 
   let deleteCommentQuery = `DELETE FROM Comments WHERE id = ${commentID}`;
 
