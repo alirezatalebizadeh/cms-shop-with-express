@@ -166,7 +166,7 @@ main url ==> http://localhost:3000/api/
 
 ///////////////////////////////////////////////start admins routes///////////////
 1.Get  admin{
-    api => http://localhost:3000/api/admins/token
+    api => http://localhost:3000/api/admins/
     method:GET
     req headers {
         authorization;admin token
