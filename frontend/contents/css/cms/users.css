@@ -5,7 +5,6 @@
 
 body {
   background-color: var(--white-50);
-  overflow: hidden;
 }
 
 .edit_user_info_modal {
