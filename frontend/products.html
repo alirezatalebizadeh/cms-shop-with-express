@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./libs/font awsome/all.min.css" />
+    <!-- <link rel="stylesheet" href="./libs/font awsome/all.min.css" /> -->
     <link rel="stylesheet" href="./contents/css/cms/products.css" />
     <!-- Option 1: Include in HTML -->
     <link
@@ -42,7 +42,7 @@
               <input
                 type="text"
                 required="true"
-                id="nameProduct"
+                id="editNameProduct"
                 placeholder="اسم محصول را بنویسید"
                 class="add_product_input"
               />
@@ -64,7 +64,7 @@
               <input
                 type="text"
                 required
-                id="priceProduct"
+                id="EditPriceProduct"
                 placeholder="قیمت محصول را بنویسید"
                 class="add_product_input"
               />
@@ -75,7 +75,7 @@
               <input
                 type="text"
                 required
-                id="countProduct"
+                id="editCountProduct"
                 placeholder="موجودی محصول را بنویسید"
                 class="add_product_input"
               />
@@ -86,7 +86,7 @@
               <input
                 type="text"
                 required
-                id="addressProduct"
+                id="editAddressProduct"
                 placeholder="آدرس محصول را بنویسید"
                 class="add_product_input"
               />
@@ -97,7 +97,7 @@
               <input
                 type="text"
                 required
-                id="popularityProduct"
+                id="editPopularityProduct"
                 placeholder=" میزان محبوبیت را بنویسید"
                 class="add_product_input"
               />
@@ -108,7 +108,7 @@
               <input
                 type="text"
                 required
-                id="saleProduct"
+                id="editSaleProduct"
                 placeholder="میزان فروش  را بنویسید"
                 class="add_product_input"
               />
@@ -119,12 +119,12 @@
               <input
                 required
                 type="text"
-                id="colorsProduct"
+                id="editColorsProduct"
                 placeholder=" تعداد رنگ بندی را بنویسید"
                 class="add_product_input"
               />
             </div>
-        <button class="edit_product_submit">ویرایش محصول</button>
+        <button type="submit" class="edit_product_submit" id="editModalBtn">ویرایش محصول</button>
       </form>
     </div>
 
@@ -200,12 +200,13 @@
         <h1 class="products_title">افزودن محصول جدید</h1>
         <form action="" class="add_product_form">
           <div class="add_product_form_wrap">
+
             <div class="add_product_form_group">
               <span><i class="bi bi-cursor-text"></i></span>
               <input
                 type="text"
                 required="true"
-                id="nameProduct"
+                id="editNameProduct"
                 placeholder="اسم محصول را بنویسید"
                 class="add_product_input"
               />
@@ -271,7 +272,7 @@
               <input
                 type="text"
                 required
-                id="saleProduct"
+                id="editsSaleProduct"
                 placeholder="میزان فروش  را بنویسید"
                 class="add_product_input"
               />

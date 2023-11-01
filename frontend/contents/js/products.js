@@ -3,6 +3,17 @@ let unAcceptDeleteBtn = document.querySelector("#unAcceptDelete");
 let confirmDeleteBtn = document.querySelector("#confirmDelete");
 let mainProductElem = document.querySelector(".main");
 let editModal = document.querySelector("#edit_Modal");
+let editModalBtn = document.querySelector("#editModalBtn");
+
+//! all inputs
+let editPriceProductElem = document.querySelector("#EditPriceProduct"),
+  editNameProductElem = document.querySelector("#editNameProduct"),
+  editCountProductElem = document.querySelector("#editCountProduct"),
+  editAddressProductElem = document.querySelector("#editAddressProduct"),
+  editPopularityProductElem = document.querySelector("#editPopularityProduct"),
+  editSaleProductElem = document.querySelector("#editSaleProduct"),
+  editColorsProductElem = document.querySelector("#editColorsProduct");
+
 let globalProductID = null;
 
 //! show edit modal
@@ -73,6 +84,33 @@ function getAllProduct() {
     });
 }
 
+function updateProduct(event) {
+  event.preventDefault();
+
+  let editInfoProduct = {
+    title: editNameProductElem.value,
+    price: Number(editPriceProductElem.value),
+    count: Number(editCountProductElem.value),
+    src: editAddressProductElem.value,
+    popularity: Number(editPopularityProductElem.value),
+    sale: Number(editSaleProductElem.value),
+    colors: Number(editColorsProductElem.value),
+  };
+  console.log(editInfoProduct);
+
+  fetch(`http://localhost:3000/api/products/${globalProductID}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(editInfoProduct),
+  }).then((res) => res.json())
+  .then(result => {
+    hiddenEditModal()
+    getAllProduct()
+  })
+}
+
 //!hidden modal's delete
 function hiddenDeleteModal() {
   deleteModal.classList.remove("active");
@@ -97,12 +135,17 @@ window.addEventListener("click", (event) => {
   if (event.target.id === "delete_modal") {
     hiddenDeleteModal();
   }
+  if (event.target.id === "edit_Modal") {
+    hiddenEditModal();
+  }
 });
 
 //! hidden modals's delete to click in Scape button on keyboard
 window.addEventListener("keydown", (event) => {
-  console.log(event);
   if (event.key === "Escape") {
     hiddenDeleteModal();
+    hiddenEditModal();
   }
 });
+
+editModalBtn.addEventListener("click", updateProduct);
