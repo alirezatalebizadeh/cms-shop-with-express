@@ -3,7 +3,12 @@ let unAcceptDeleteBtn = document.querySelector("#unAcceptDelete");
 let confirmDeleteBtn = document.querySelector("#confirmDelete");
 let mainProductElem = document.querySelector(".main");
 let editModal = document.querySelector("#edit_Modal");
+let detailModal = document.querySelector("#detail_modal");
 let editModalBtn = document.querySelector("#editModalBtn");
+
+let popularity = document.querySelector(".popularity");
+let sales = document.querySelector(".sales");
+let countColors = document.querySelector(".count_colors");
 
 //! all inputs
 let editPriceProductElem = document.querySelector("#EditPriceProduct"),
@@ -20,6 +25,19 @@ let globalProductID = null;
 function showDeleteModal(productID) {
   globalProductID = productID;
   deleteModal.classList.add("active");
+  popularity.innerHTML = product.popularity;
+  sales.innerHTML = product.sale;
+  countColors.innerHTML = product.colors;
+}
+
+//! show deatils modal
+function showDetailModal(infoProduct) {
+  detailModal.classList.add("active");
+  // console.log(infoProduct);
+}
+//! hidden detail modal
+function hiddenDetailModal() {
+  detailModal.classList.remove("active");
 }
 
 //!  show edit modal
@@ -28,6 +46,16 @@ function showEditModal(productID) {
   editModal.classList.add("active");
 }
 
+//! clear edit inputs
+function clearEditInputs() {
+  editPriceProductElem.value = "";
+  editNameProductElem.value = "";
+  editCountProductElem.value = "";
+  editAddressProductElem.value = "";
+  editPopularityProductElem.value = "";
+  editSaleProductElem.value = "";
+  editColorsProductElem.value = "";
+}
 //! hidden edit modal
 function hiddenEditModal() {
   editModal.classList.remove("active");
@@ -57,6 +85,7 @@ function getAllProduct() {
         const productsContent = document.querySelector(".product_content");
 
         productsContent.innerHTML = "";
+
         allProducts.forEach((product) => {
           productsContent.insertAdjacentHTML(
             "beforeend",
@@ -66,7 +95,7 @@ function getAllProduct() {
                <td>${product.price}</td>
                <td>${product.count}</td>
                <td>
-                  <button class="products_table_button">جزيیات</button>
+                  <button class="products_table_button" onclick="showDetailModal('${JSON.stringify(product)}')">جزيیات</button>
                   <button class="products_table_button" onclick="showDeleteModal(${product.id})">حذف</button>
                   <button class="products_table_button" onclick='showEditModal(${product.id})'>ویرایش</button>
                </td>
@@ -104,11 +133,13 @@ function updateProduct(event) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(editInfoProduct),
-  }).then((res) => res.json())
-  .then(result => {
-    hiddenEditModal()
-    getAllProduct()
   })
+    .then((res) => res.json())
+    .then((result) => {
+      clearEditInputs();
+      hiddenEditModal();
+      getAllProduct();
+    });
 }
 
 //!hidden modal's delete
@@ -137,6 +168,10 @@ window.addEventListener("click", (event) => {
   }
   if (event.target.id === "edit_Modal") {
     hiddenEditModal();
+    clearEditInputs();
+  }
+  if (event.target.id === "detail_modal") {
+    hiddenDetailModal();
   }
 });
 
@@ -145,6 +180,8 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     hiddenDeleteModal();
     hiddenEditModal();
+    clearEditInputs();
+    hiddenDetailModal();
   }
 });
 
