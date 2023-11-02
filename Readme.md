@@ -4,7 +4,9 @@
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 we have to make query to connect some tables in db and relation with their 
 
-
+### to run this project ==>
+ ```run npx nodemon server.js in backend folder```
+ ```run mysql ```
 
 
 

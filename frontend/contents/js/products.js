@@ -30,10 +30,12 @@ function showDeleteModal(productID) {
   countColors.innerHTML = product.colors;
 }
 
-//! show deatils modal
+//! show detail of product in modal
 function showDetailModal(infoProduct) {
   detailModal.classList.add("active");
-  // console.log(infoProduct);
+  popularity.innerHTML=infoProduct.popularity
+  sales.innerHTML= infoProduct.sale
+  colors.innerHTML=infoProduct.colors
 }
 //! hidden detail modal
 function hiddenDetailModal() {
@@ -95,7 +97,7 @@ function getAllProduct() {
                <td>${product.price}</td>
                <td>${product.count}</td>
                <td>
-                  <button class="products_table_button" onclick="showDetailModal('${JSON.stringify(product)}')">جزيیات</button>
+                  <button class="products_table_button" onclick='showDetailModal(${JSON.stringify(product)})'>جزيیات</button>
                   <button class="products_table_button" onclick="showDeleteModal(${product.id})">حذف</button>
                   <button class="products_table_button" onclick='showEditModal(${product.id})'>ویرایش</button>
                </td>
@@ -113,6 +115,7 @@ function getAllProduct() {
     });
 }
 
+//! update product
 function updateProduct(event) {
   event.preventDefault();
 

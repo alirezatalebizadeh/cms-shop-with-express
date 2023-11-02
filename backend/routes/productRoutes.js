@@ -11,7 +11,8 @@ productsRouter.get("/", (req, res) => {
 
   shopDb.query(selectAllProductsQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      console.log(err);
+      res.send(null);
     } else {
       res.send(result);
     }
@@ -26,8 +27,7 @@ productsRouter.delete("/:productID", (req, res) => {
 
   shopDb.query(deleteProductQuery, (err, result) => {
     if (err) {
-      console.log("error============> ", err);
-      res.send("null");
+      res.send(null);
     } else {
       res.send(result);
     }
@@ -43,7 +43,7 @@ productsRouter.put("/:productID", (req, res) => {
 
   shopDb.query(updateProductQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
       res.send(result);
     }
@@ -57,7 +57,7 @@ productsRouter.post("/", (req, res) => {
 
   shopDb.query(createProductQuery, (err, result) => {
     if (err) {
-      res.send("null=========>", err);
+      res.send(null);
     } else {
       res.send(result);
     }
