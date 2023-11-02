@@ -1,5 +1,22 @@
 let commentsMain = document.querySelector('.cms_main')
+let detailsModal = document.querySelector('#details_modal')
+let commentBody = document.querySelector('.comment_body')
+let closeModal = document.querySelector('#close_modal')
 
+
+//! show detail modal and show comment in it
+function showDetailModal(comment){
+    commentBody.innerHTML=comment.body
+    detailsModal.classList.add('active')
+}
+
+
+//! close detail modal
+function closeDetailModal(){
+    detailsModal.classList.remove('active')
+}
+
+//! get all comments from db and show in table
 window.addEventListener("load", () => {
   fetch(`http://localhost:3000/api/comments/`)
     .then((res) => res.json())
@@ -25,7 +42,7 @@ window.addEventListener("load", () => {
                    <td> ${comment.userID} ${comment.userFamily}</td>
                    <td>${comment.productID}</td>
                    <td>
-                   <button>دیدن متن</button>
+                   <button  onclick='showDetailModal(${JSON.stringify(comment)})' >دیدن متن</button>
                    </td>
                    <td>${comment.date}</td>
                    <td>${comment.hour}</td>
@@ -48,3 +65,6 @@ window.addEventListener("load", () => {
 
     });
 });
+
+
+closeModal.addEventListener('click',closeDetailModal)
