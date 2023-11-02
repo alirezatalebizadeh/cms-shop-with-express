@@ -7,7 +7,7 @@ const commentsRouter = express.Router();
 //! get all comments from db
 commentsRouter.get("/", (req, res) => {
   //!refactor query to connect to users's table and product's table and join that
-  let selectAllCommentsQuery = `SELECT Comments.id , Comments.body , Comments.date , Comments.hour , Users.firstName as userID , Products.title as productID from Comments INNER JOIN Users on Users.id = Comments.userID INNER JOIN Products on Products.id =Comments.productID`;
+  let selectAllCommentsQuery = `SELECT Comments.id , Comments.body , Comments.date , Comments.hour , Users.firstName as userID ,Users.lastName as userFamily , Products.title as productID from Comments INNER JOIN Users on Users.id = Comments.userID INNER JOIN Products on Products.id =Comments.productID`;
 
   shopDb.query(selectAllCommentsQuery, (err, result) => {
     if (err) {
