@@ -3,8 +3,10 @@ let detailsModal = document.querySelector("#details_modal");
 let commentBody = document.querySelector(".comment_body");
 let closeModal = document.querySelector("#close_modal");
 let answerEditModal = document.querySelector("#answer_Edit_Modal");
-let closeEditModalBtn = document.querySelector("#close_edit_modal");
+let answerEditSubmitBtn = document.querySelector("#submit_edit_modal");
 let textEditModal = document.querySelector("#answer_edit_modal_text");
+let answerEditModalMode = null;
+let globalCommentID = null;
 
 //! show detail modal and show comment in it
 function showDetailModal(comment) {
@@ -12,12 +14,14 @@ function showDetailModal(comment) {
   detailsModal.classList.add("active");
 }
 
-//! answer edit modal
+//!show edit modal
 function showEditModal(mainComment) {
+  answerEditModalMode = "edit";
+  globalCommentID = mainComment.id;
+
   textEditModal.value = mainComment.body;
   answerEditModal.classList.add("active");
-
-  console.log(mainComment);
+  answerEditSubmitBtn.innerHTML = "ویرایش نظر کاربر";
 }
 
 //! hidden edit modal
@@ -37,9 +41,9 @@ window.addEventListener("load", () => {
     .then((comments) => {
       if (comments.length) {
         commentsMain.insertAdjacentHTML(
-          "beforebegin",
+          "beforeend",
           `
-               <table class="cms_table">
+               <table class="cms_table comments_table">
                   <tr>
                    <th>اسم کاربر</th>
                    <th>محصول</th>
@@ -53,11 +57,9 @@ window.addEventListener("load", () => {
         const commentsTable = document.querySelector(".cms_table");
 
         comments.forEach((comment) => {
-          // console.log(comment);
           commentsTable.insertAdjacentHTML(
             "beforeend",
-            `
-                <tr>
+            `<tr>
                    <td> ${comment.userID} ${comment.userFamily}</td>
                    <td>${comment.productID}</td>
                    <td>
@@ -76,7 +78,7 @@ window.addEventListener("load", () => {
                      )})'> ویرایش</button>
                    </td>
                 </tr>
-               `
+            `
           );
         });
       } else {
@@ -109,4 +111,76 @@ window.addEventListener("click", (event) => {
 });
 
 closeModal.addEventListener("click", closeDetailModal);
-closeEditModalBtn.addEventListener("click", closeEditModal);
+
+//! edit comment
+answerEditSubmitBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  if (answerEditModalMode === "edit") {
+    let commentUpdateObj = {
+      body: textEditModal.value,
+    };
+
+    console.log(commentBody);
+    fetch(`http://localhost:3000/api/comments/${globalCommentID}`, {
+      method: "PUT",
+      body: JSON.stringify(commentUpdateObj),
+      headers: {
+        "Content-Type": "application/json",
+      }
+    }).then((res) => {
+      if (res.status === 200) {
+        closeEditModal();
+
+        fetch(`http://localhost:3000/api/comments/`)
+          .then((res) => res.json())
+          .then((comments) => {
+            let commentsTable = document.querySelector(".comments_table");
+            
+            commentsTable.innerHTML= ''
+            commentsTable.insertAdjacentHTML(
+              "beforeend",`
+                <tr>
+                  <th>اسم کاربر</th>
+                  <th>محصول</th>
+                  <th>کامنت</th>
+                  <th>تاریخ</th>
+                  <th>ساعت</th>
+                </tr>`
+            );
+
+            comments.forEach((comment) => {
+              // console.log(comment);
+              commentsTable.insertAdjacentHTML(
+                "beforeend",
+                `
+                <tr>
+                   <td> ${comment.userID} ${comment.userFamily}</td>
+                   <td>${comment.productID}</td>
+                   <td>
+                   <button  onclick='showDetailModal(${JSON.stringify(
+                     comment
+                   )})' >دیدن متن</button>
+                   </td>
+                   <td>${comment.date}</td>
+                   <td>${comment.hour}</td>
+                   <td>
+                     <button>حذف</button>
+                     <button>تایید</button>
+                     <button>باسخ</button>
+                     <button onclick='showEditModal(${JSON.stringify(
+                       comment
+                     )})'> ویرایش</button>
+                   </td>
+                </tr>
+               `
+              );
+            });
+          });
+      } else {
+        alert("مشکلی پیش امد.مجددا سعی کنید");
+      }
+    });
+  } else {
+  }
+});
