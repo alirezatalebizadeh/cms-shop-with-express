@@ -20,9 +20,8 @@ usersRouter.get("/", (req, res) => {
 //! delete user from db
 usersRouter.delete("/:userID", (req, res) => {
   let userID = req.params.userID;
-
+  console.log(userID);
   let deleteUserQuery = `DELETE FROM Users WHERE id = ${userID}`;
-
   shopDb.query(deleteUserQuery, (err, result) => {
     if (err) {
       res.send(null);

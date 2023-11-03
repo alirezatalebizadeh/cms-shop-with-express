@@ -12,15 +12,13 @@
     />
   </head>
   <body>
-
-
     <!-- !detail modal -->
     <!-- add active class to show it -->
     <div class="modal" id="detail_modal">
       <div class="detail_modal">
         <table class="cms_table">
           <tr>
-            <th>شهر </th>
+            <th>شهر</th>
             <th>میزان خرید</th>
             <th>امتیاز کاربر</th>
           </tr>
@@ -39,24 +37,32 @@
       <div class="delete_modal">
         <h2>آیا از حذف محصول اطمینان دارید؟</h2>
         <div class="delete_modal_btn">
-          <button class="delete_modal_accept_btn" id="confirm_delete_modal_btn">بله</button>
-          <button class="delete_modal_reject_btn" id="reject_delete_modal_btn">خیر</button>
+          <button class="delete_modal_accept_btn" id="confirm_delete_modal_btn">
+            بله
+          </button>
+          <button class="delete_modal_reject_btn" id="reject_delete_modal_btn">
+            خیر
+          </button>
         </div>
       </div>
     </div>
 
     <!-- !edit user -->
     <!-- add active class to show delete modal -->
-    <div class="modal">
+    <div class="modal" id="edit_modal">
       <div class="edit_user_info_modal">
         <h1 class="products_title">تغییر اطلاعات کاربر</h1>
 
         <form action="" class="add_product_form">
           <div class="add_product_form_group">
             <span><i class="bi bi-cursor-text"></i></span>
+            <input type="text" placeholder="نام" class="add_product_input" />
+          </div>
+          <div class="add_product_form_group">
+            <span><i class="bi bi-cursor-text"></i></span>
             <input
               type="text"
-              placeholder="نام و نام خانوادگی"
+              placeholder="نام خانوادگی"
               class="add_product_input"
             />
           </div>
@@ -80,12 +86,41 @@
           </div>
 
           <div class="add_product_form_group">
+            <i class="bi bi-lock"></i>
+            <input
+              type="text"
+              placeholder="شماره تلفن"
+              class="add_product_input"
+            />
+          </div>
+
+          <div class="add_product_form_group">
             <span><i class="bi bi-envelope"></i> </span>
             <input
               type="email"
               placeholder=" آدرس ایمیل"
               class="add_product_input"
             />
+          </div>
+
+          <div class="add_product_form_group">
+            <i class="bi bi-lock"></i>
+            <input type="text" placeholder="شهر" class="add_product_input" />
+          </div>
+
+          <div class="add_product_form_group">
+            <i class="bi bi-lock"></i>
+            <input type="text" placeholder="آدرس" class="add_product_input" />
+          </div>
+
+          <div class="add_product_form_group">
+            <i class="bi bi-lock"></i>
+            <input type="text" placeholder="امتیاز" class="add_product_input" />
+          </div>
+
+          <div class="add_product_form_group">
+            <i class="bi bi-lock"></i>
+            <input type="text" placeholder="خرید" class="add_product_input" />
           </div>
 
           <button class="add_product_submit user_info_submit">
@@ -100,7 +135,7 @@
       <h3>داشبورد ادمین</h3>
       <a href="./orders.html">
         <i class="fa fa-home" aria-hidden="true"></i>
-         سفارشات
+        سفارشات
       </a>
       <a href="./products.html">
         <i class="fa fa-laptop" aria-hidden="true"></i>
@@ -125,10 +160,10 @@
     <div class="main">
       <!-- header -->
       <div class="header">
-         <div class="admin_profile">
+        <div class="admin_profile">
           <img src="" id="admin_profile" alt="admin profile" />
           <div class="">
-            <h1 id="admin_name"> </h1>
+            <h1 id="admin_name"></h1>
             <h3 id="admin_job"></h3>
           </div>
         </div>
@@ -180,6 +215,5 @@
     <script src="./libs/font awsome/all.min.js"></script>
     <script src="./contents/js/adminsInfo.js"></script>
     <script src="./contents/js/users.js"></script>
-
   </body>
 </html>

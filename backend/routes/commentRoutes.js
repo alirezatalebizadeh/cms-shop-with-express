@@ -11,7 +11,7 @@ commentsRouter.get("/", (req, res) => {
 
   shopDb.query(selectAllCommentsQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
       res.send(result);
     }
@@ -28,6 +28,7 @@ commentsRouter.delete("/:commentID", (req, res) => {
   shopDb.query(deleteCommentQuery, (err, result) => {
     if (err) {
       res.send(null);
+      console.log(err);
     } else {
       res.send(result);
     }
@@ -41,7 +42,7 @@ commentsRouter.put("/:commentID", (req, res) => {
   let updateCommentQuery = `UPDATE Comments SET body='${req.body.body}' WHERE id = ${commentID}`;
   shopDb.query(updateCommentQuery, (err, result) => {
     if (err) {
-      res.send("null", err);
+      res.send(null);
     } else {
       res.send(result);
     }

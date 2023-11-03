@@ -51,7 +51,6 @@ window.addEventListener("load", () => {
   fetch(`http://localhost:3000/api/comments/`)
     .then((res) => res.json())
     .then((comments) => {
-      console.log(comments);
       if (comments.length) {
         commentsMain.insertAdjacentHTML(
           "beforeend",
@@ -172,7 +171,6 @@ answerEditSubmitBtn.addEventListener("click", (event) => {
             );
 
             comments.forEach((comment) => {
-              // console.log(comment);
               commentsTable.insertAdjacentHTML(
                 "beforeend",
                 `
