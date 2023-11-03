@@ -1,13 +1,13 @@
 let detailModalElem = document.querySelector("#detail_modal"),
   cityUserElem = document.querySelector(".city_User"),
   salesUserElem = document.querySelector(".sales_User"),
-  scoreUserElem = document.querySelector(".score_User");
+  scoreUserElem = document.querySelector(".score_User"),
+  deleteModalElem = document.querySelector("#delete_modal"),
+  confirmDeleteModalBtn = document.querySelector("#confirm_delete_modal_btn"),
+  rejectDeleteModalBtn = document.querySelector("#reject_delete_modal_btn");
 
+let globalUserID = null;
 
-
-
-
-  
 //! show detail modal
 function showDetailModal(userInfo) {
   cityUserElem.innerHTML = `${userInfo.city}`;
@@ -20,6 +20,19 @@ function showDetailModal(userInfo) {
 function closeDetailModal() {
   detailModalElem.classList.remove("active");
 }
+
+//! close delete modal
+function closeDeleteMOdal() {
+  deleteModalElem.classList.remove("active");
+}
+//! show delete modal
+function showDeleteModal(userID) {
+  globalUserID = userID;
+  console.log(globalUserID);
+  deleteModalElem.classList.add('active')
+}
+
+
 
 //! get all users from db and show in table
 window.addEventListener("load", () => {
@@ -56,7 +69,7 @@ window.addEventListener("load", () => {
             <td>${user.phone}</td>
             <td>${user.email}</td>
             <td>
-              <button>حذف</button>
+              <button onclick='showDeleteModal(${user.id})'>حذف</button>
               <button onclick='showDetailModal(${JSON.stringify(
                 user
               )})'>جزييات</button>
@@ -79,18 +92,18 @@ window.addEventListener("load", () => {
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeDetailModal();
+    closeDeleteMOdal();
   }
 });
 
 //! click modals with click
 window.addEventListener("click", (event) => {
-  if (event.target.id === "answer_Edit_Modal") {
-    // closeEditModal();
-  }
   if (event.target.id === "detail_modal") {
     closeDetailModal();
   }
   if (event.target.id === "delete_modal") {
-    // closeDeleteModal();
+    closeDeleteMOdal();
   }
 });
+
+rejectDeleteModalBtn.addEventListener("click", closeDeleteMOdal);
