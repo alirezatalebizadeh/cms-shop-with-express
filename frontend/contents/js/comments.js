@@ -6,7 +6,7 @@ let answerEditModal = document.querySelector("#answer_Edit_Modal");
 let answerEditSubmitBtn = document.querySelector("#submit_edit_modal");
 let textEditModal = document.querySelector("#answer_edit_modal_text");
 let deleteModalElem = document.querySelector("#delete_modal");
-let deleteModalRejectBtn = document.querySelector('#delete_modal_reject_btn')
+let deleteModalRejectBtn = document.querySelector("#delete_modal_reject_btn");
 let answerEditModalMode = null;
 let globalCommentID = null;
 
@@ -51,19 +51,19 @@ window.addEventListener("load", () => {
   fetch(`http://localhost:3000/api/comments/`)
     .then((res) => res.json())
     .then((comments) => {
+      console.log(comments);
       if (comments.length) {
         commentsMain.insertAdjacentHTML(
           "beforeend",
-          `
-               <table class="cms_table comments_table">
-                  <tr>
+          `<table class="cms_table comments_table">
+                <tr>
                    <th>اسم کاربر</th>
                    <th>محصول</th>
                    <th>کامنت</th>
                    <th>تاریخ</th>
                    <th>ساعت</th>
-                 </tr>
-              </table> 
+                </tr>
+           </table> 
             `
         );
         const commentsTable = document.querySelector(".cms_table");
@@ -83,7 +83,12 @@ window.addEventListener("load", () => {
                    <td>${comment.hour}</td>
                    <td>
                      <button onclick="showDeleteModal()">حذف</button>
-                     <button>تایید</button>
+                     ${
+                       comment.isAccept === 1
+                         ? `<button>رد</button>`
+                         : `<button>تایید</button>`
+                     }
+                     
                      <button>باسخ</button>
                      <button onclick='showEditModal(${JSON.stringify(
                        comment
@@ -202,4 +207,4 @@ answerEditSubmitBtn.addEventListener("click", (event) => {
   }
 });
 
-deleteModalRejectBtn.addEventListener('click',closeDeleteModal)
+deleteModalRejectBtn.addEventListener("click", closeDeleteModal);
