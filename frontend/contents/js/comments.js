@@ -5,6 +5,8 @@ let closeModal = document.querySelector("#close_modal");
 let answerEditModal = document.querySelector("#answer_Edit_Modal");
 let answerEditSubmitBtn = document.querySelector("#submit_edit_modal");
 let textEditModal = document.querySelector("#answer_edit_modal_text");
+let deleteModalElem = document.querySelector("#delete_modal");
+let deleteModalRejectBtn = document.querySelector('#delete_modal_reject_btn')
 let answerEditModalMode = null;
 let globalCommentID = null;
 
@@ -22,6 +24,16 @@ function showEditModal(mainComment) {
   textEditModal.value = mainComment.body;
   answerEditModal.classList.add("active");
   answerEditSubmitBtn.innerHTML = "ویرایش نظر کاربر";
+}
+
+//! show delete modal
+function showDeleteModal() {
+  deleteModalElem.classList.add("active");
+}
+
+//! close delete modal
+function closeDeleteModal() {
+  deleteModalElem.classList.remove("active");
 }
 
 //! hidden edit modal
@@ -70,7 +82,7 @@ window.addEventListener("load", () => {
                    <td>${comment.date}</td>
                    <td>${comment.hour}</td>
                    <td>
-                     <button>حذف</button>
+                     <button onclick="showDeleteModal()">حذف</button>
                      <button>تایید</button>
                      <button>باسخ</button>
                      <button onclick='showEditModal(${JSON.stringify(
@@ -97,6 +109,7 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeDetailModal();
     closeEditModal();
+    closeDeleteModal();
   }
 });
 
@@ -107,6 +120,9 @@ window.addEventListener("click", (event) => {
   }
   if (event.target.id === "details_modal") {
     closeDetailModal();
+  }
+  if (event.target.id === "delete_modal") {
+    closeDeleteModal();
   }
 });
 
@@ -127,7 +143,7 @@ answerEditSubmitBtn.addEventListener("click", (event) => {
       body: JSON.stringify(commentUpdateObj),
       headers: {
         "Content-Type": "application/json",
-      }
+      },
     }).then((res) => {
       if (res.status === 200) {
         closeEditModal();
@@ -136,10 +152,11 @@ answerEditSubmitBtn.addEventListener("click", (event) => {
           .then((res) => res.json())
           .then((comments) => {
             let commentsTable = document.querySelector(".comments_table");
-            
-            commentsTable.innerHTML= ''
+
+            commentsTable.innerHTML = "";
             commentsTable.insertAdjacentHTML(
-              "beforeend",`
+              "beforeend",
+              `
                 <tr>
                   <th>اسم کاربر</th>
                   <th>محصول</th>
@@ -165,7 +182,7 @@ answerEditSubmitBtn.addEventListener("click", (event) => {
                    <td>${comment.date}</td>
                    <td>${comment.hour}</td>
                    <td>
-                     <button>حذف</button>
+                     <button onclick="showDeleteModal()">حذف</button>
                      <button>تایید</button>
                      <button>باسخ</button>
                      <button onclick='showEditModal(${JSON.stringify(
@@ -184,3 +201,5 @@ answerEditSubmitBtn.addEventListener("click", (event) => {
   } else {
   }
 });
+
+deleteModalRejectBtn.addEventListener('click',closeDeleteModal)
