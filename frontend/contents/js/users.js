@@ -1,8 +1,31 @@
+let detailModalElem = document.querySelector("#detail_modal"),
+  cityUserElem = document.querySelector(".city_User"),
+  salesUserElem = document.querySelector(".sales_User"),
+  scoreUserElem = document.querySelector(".score_User");
+
+
+
+
+
+  
+//! show detail modal
+function showDetailModal(userInfo) {
+  cityUserElem.innerHTML = `${userInfo.city}`;
+  salesUserElem.innerHTML = `${userInfo.buy}`;
+  scoreUserElem.innerHTML = `${userInfo.score}`;
+  detailModalElem.classList.add("active");
+}
+
+//! close detail's modal
+function closeDetailModal() {
+  detailModalElem.classList.remove("active");
+}
+
+//! get all users from db and show in table
 window.addEventListener("load", () => {
   fetch(`http://localhost:3000/api/users/`)
     .then((res) => res.json())
     .then((users) => {
-      console.log(users);
       let usersWrapper = document.querySelector(".cms_main");
 
       if (users.length) {
@@ -34,7 +57,9 @@ window.addEventListener("load", () => {
             <td>${user.email}</td>
             <td>
               <button>حذف</button>
-              <button>جزييات</button>
+              <button onclick='showDetailModal(${JSON.stringify(
+                user
+              )})'>جزييات</button>
               <button>ویرایش</button>
             </td>
           </tr>
@@ -48,4 +73,24 @@ window.addEventListener("load", () => {
         );
       }
     });
+});
+
+//! close modals with click on keyboard
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeDetailModal();
+  }
+});
+
+//! click modals with click
+window.addEventListener("click", (event) => {
+  if (event.target.id === "answer_Edit_Modal") {
+    // closeEditModal();
+  }
+  if (event.target.id === "detail_modal") {
+    closeDetailModal();
+  }
+  if (event.target.id === "delete_modal") {
+    // closeDeleteModal();
+  }
 });
